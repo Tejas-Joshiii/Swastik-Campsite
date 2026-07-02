@@ -6,12 +6,13 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.environ.get("SECRET_KEY", "django-insecure-change-this-in-production")
-DEBUG = os.environ.get("DEBUG", "True").lower() == "true"
+default_debug = "False" if os.environ.get("VERCEL") else "True"
+DEBUG = os.environ.get("DEBUG", default_debug).lower() == "true"
 
 default_hosts = ["localhost", "127.0.0.1", "testserver", ".vercel.app"]
 extra_hosts = [host.strip() for host in os.environ.get("ALLOWED_HOSTS", "").split(",") if host.strip()]
 ALLOWED_HOSTS = default_hosts + extra_hosts
-CSRF_TRUSTED_ORIGINS = [
+CSRF_TRUSTED_ORIGINS = ["https://*.vercel.app"] + [
     origin.strip()
     for origin in os.environ.get("CSRF_TRUSTED_ORIGINS", "").split(",")
     if origin.strip()
@@ -93,3 +94,10 @@ STATICFILES_DIRS = [BASE_DIR / "static"]
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+if not DEBUG:
+    SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+    SECURE_SSL_REDIRECT = True
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
+    SECURE_HSTS_SECONDS = int(os.environ.get("SECURE_HSTS_SECONDS", "3600"))

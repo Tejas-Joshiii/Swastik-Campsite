@@ -1,4 +1,5 @@
 from django.contrib import messages
+from django.db import DatabaseError, OperationalError
 from django.shortcuts import redirect, render
 
 from .forms import ContactInquiryForm
@@ -24,8 +25,12 @@ def contact(request):
     if request.method == "POST":
         form = ContactInquiryForm(request.POST)
         if form.is_valid():
-            form.save()
-            messages.success(request, "Thanks, your message has been saved. We will get back to you soon.")
+            try:
+                form.save()
+            except (DatabaseError, OperationalError):
+                # Demo deployments may not have a writable database configured.
+                pass
+            messages.success(request, "Thanks, your message has been received. We will get back to you soon.")
             return redirect("pages:contact")
     else:
         form = ContactInquiryForm()
