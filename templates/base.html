@@ -1,0 +1,135 @@
+{% load static %}
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>{% block title %}Swastik Campsite{% endblock %}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;500;700&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-surface": "#1a1c19",
+                        "on-surface-variant": "#414944",
+                        "on-primary": "#ffffff",
+                        "primary": "#154231",
+                        "primary-container": "#2e5a47",
+                        "surface": "#fafaf5",
+                        "background": "#fafaf5",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#f4f4ef",
+                        "surface-container": "#eeeee9",
+                        "surface-container-high": "#e8e8e3",
+                        "surface-container-highest": "#e3e3de",
+                        "outline": "#717973",
+                        "outline-variant": "#c0c8c2",
+                        "tertiary": "#5f2d00",
+                        "tertiary-fixed": "#ffdcc5",
+                        "tertiary-fixed-dim": "#ffb783",
+                        "on-tertiary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "primary-fixed": "#bdedd4"
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.125rem",
+                        lg: "0.25rem",
+                        xl: "0.5rem",
+                        full: "0.75rem"
+                    },
+                    fontFamily: {
+                        headline: ["Noto Serif", "serif"],
+                        body: ["Manrope", "sans-serif"],
+                        label: ["Manrope", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: "Manrope", sans-serif; }
+        h1, h2, h3, .serif { font-family: "Noto Serif", serif; }
+        .material-symbols-outlined {
+            font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+        }
+        .hero-gradient {
+            background: linear-gradient(to bottom, rgba(21, 66, 49, 0.4), rgba(26, 28, 25, 0.72));
+        }
+        .editorial-shadow {
+            box-shadow: 0 24px 48px -12px rgba(26, 28, 25, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary-fixed selection:text-primary">
+<nav class="fixed top-0 w-full z-50 bg-white/85 backdrop-blur-md shadow-sm">
+    <div class="flex justify-between items-center px-5 md:px-8 py-3 max-w-full mx-auto">
+        <a class="flex items-center gap-3" href="{% url 'pages:home' %}">
+            <img alt="Swastik Campsite Logo" class="h-11 w-11 object-contain rounded-lg bg-white" src="{% static 'images/swastik-logo.png' %}">
+            <span class="text-lg md:text-xl font-bold tracking-tight text-primary font-headline">Swastik Campsite</span>
+        </a>
+        <div class="hidden lg:flex items-center space-x-8 font-headline font-medium text-sm tracking-wide">
+            <a class="{% if request.resolver_match.url_name == 'home' %}text-primary font-bold border-b-2 border-primary pb-1{% else %}text-stone-600 hover:text-primary transition-colors{% endif %}" href="{% url 'pages:home' %}">Home</a>
+            <a class="{% if request.resolver_match.url_name == 'stay_options' %}text-primary font-bold border-b-2 border-primary pb-1{% else %}text-stone-600 hover:text-primary transition-colors{% endif %}" href="{% url 'pages:stay_options' %}">Stay Options</a>
+            <a class="{% if request.resolver_match.url_name == 'experiences' %}text-primary font-bold border-b-2 border-primary pb-1{% else %}text-stone-600 hover:text-primary transition-colors{% endif %}" href="{% url 'pages:experiences' %}">Experiences</a>
+            <a class="{% if request.resolver_match.url_name == 'location' %}text-primary font-bold border-b-2 border-primary pb-1{% else %}text-stone-600 hover:text-primary transition-colors{% endif %}" href="{% url 'pages:location' %}">Location</a>
+            <a class="{% if request.resolver_match.url_name == 'contact' %}text-primary font-bold border-b-2 border-primary pb-1{% else %}text-stone-600 hover:text-primary transition-colors{% endif %}" href="{% url 'pages:contact' %}">Contact</a>
+        </div>
+        <a class="bg-primary text-on-primary px-5 py-2.5 rounded-lg font-medium text-sm hover:bg-primary-container transition-all" href="{% url 'pages:contact' %}">Book Now</a>
+    </div>
+</nav>
+
+{% if messages %}
+<div class="fixed top-20 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-xl">
+    {% for message in messages %}
+    <div class="rounded-lg bg-primary text-white px-5 py-3 shadow-lg">{{ message }}</div>
+    {% endfor %}
+</div>
+{% endif %}
+
+{% block content %}{% endblock %}
+
+<footer class="w-full py-12 px-8 border-t border-stone-200 bg-stone-100">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto font-body text-sm leading-relaxed">
+        <div class="space-y-6">
+            <a class="flex items-center gap-4" href="{% url 'pages:home' %}">
+                <img alt="Swastik Campsite Logo" class="h-14 w-14 object-contain rounded-lg bg-white" src="{% static 'images/swastik-logo.png' %}">
+                <span class="text-2xl font-bold tracking-tight text-primary font-headline">Swastik Campsite</span>
+            </a>
+            <p class="text-stone-500">Your curated gateway to the serenity of Chakrata. Experience mountains like never before.</p>
+        </div>
+        <div>
+            <h4 class="font-bold text-primary mb-6 uppercase tracking-widest text-xs">Quick Links</h4>
+            <ul class="space-y-3">
+                <li><a class="text-stone-500 hover:text-primary" href="{% url 'pages:home' %}">Home</a></li>
+                <li><a class="text-stone-500 hover:text-primary" href="{% url 'pages:stay_options' %}">Stay Options</a></li>
+                <li><a class="text-stone-500 hover:text-primary" href="{% url 'pages:experiences' %}">Experiences</a></li>
+                <li><a class="text-stone-500 hover:text-primary" href="{% url 'pages:location' %}">Location</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4 class="font-bold text-primary mb-6 uppercase tracking-widest text-xs">Reach Us</h4>
+            <ul class="space-y-3 text-stone-500">
+                <li class="flex gap-3"><span class="material-symbols-outlined text-sm">location_on</span> Chakrata, Uttarakhand</li>
+                <li class="flex gap-3"><span class="material-symbols-outlined text-sm">mail</span> swastikcampsite@gmail.com</li>
+                <li class="flex gap-3"><span class="material-symbols-outlined text-sm">call</span> +91 78308 00469</li>
+            </ul>
+        </div>
+        <div>
+            <h4 class="font-bold text-primary mb-6 uppercase tracking-widest text-xs">Newsletter</h4>
+            <p class="text-stone-500 mb-4 text-xs">Get travel tips and season updates.</p>
+            <div class="flex">
+                <input class="bg-white border-0 rounded-l-lg p-2 text-xs w-full focus:ring-1 focus:ring-primary" placeholder="Email" type="email">
+                <button class="bg-primary text-white p-2 rounded-r-lg"><span class="material-symbols-outlined text-sm">send</span></button>
+            </div>
+        </div>
+    </div>
+    <div class="max-w-7xl mx-auto mt-12 pt-8 border-t border-stone-200/50 text-center text-xs text-stone-400">
+        © 2024 Swastik Campsite Chakrata. Experience the True Spirit of the Mountains.
+    </div>
+</footer>
+</body>
+</html>

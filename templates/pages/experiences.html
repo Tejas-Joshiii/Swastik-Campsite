@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+
+{% block title %}Experiences | Swastik Campsite{% endblock %}
+
+{% block content %}
+<main>
+    <section class="relative min-h-[86vh] w-full overflow-hidden flex items-center justify-center">
+        <img alt="Chakrata Mountains" class="absolute inset-0 w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCt3n6-aXp5b27FScWLLCrwiAU8wFeqWtUH6cI9nq9owWLWRt20tPbxcetMcJ8hlz_5rzJzf-kcUszNaCPaaemJp35UWi88ZcMCrXPElwKHlWfsS162tRYlZaJgc1iWB8kvsWu-jFwXrzyi1V6UytrFaG9-hXNtMFw5dZO2-QUy-YMtj5ErYZopvnrrnod2d5pVj6JJklGVvZAU3MwLpRyfiZ5ba0MSZIFUkGnKgLJd-NpxMrZiGVtksymfoku1cUXgVU-bykP9crH4">
+        <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-background/90"></div>
+        <div class="relative z-10 text-center px-6 max-w-4xl">
+            <span class="inline-block px-4 py-1.5 rounded-full bg-tertiary-fixed text-primary font-label text-xs font-bold tracking-widest uppercase mb-6">Discovery Awaits</span>
+            <h1 class="font-headline text-5xl md:text-7xl text-white mb-8 leading-tight drop-shadow-lg">Unforgettable Himalayan Experiences</h1>
+            <p class="text-white/90 text-lg md:text-xl font-light leading-relaxed max-w-2xl mx-auto italic">Curating moments of peace, thrill, and heritage amidst the ancient peaks of Chakrata.</p>
+        </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-8 py-24">
+        <div class="mb-12">
+            <h2 class="font-headline text-4xl text-primary mb-4">Mountain Curations</h2>
+            <p class="text-on-surface-variant leading-relaxed max-w-2xl">From hidden trails to local kitchens, we offer curated activities designed to immerse you in the authentic spirit of the Himalayas.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+            <div class="md:col-span-8 group relative overflow-hidden rounded-xl h-[500px]">
+                <img alt="Adventure Trekking in Himalayas" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDI4QMaAMT0HF2J51g7yyGGWFbvQmo40QsuQAnMfsGpDJDIYTVAdrQbtvBA4c4n2tZ9H6BzkyiKPz-4SrxSDZkcAH96akcsj99HSnBuTuxrqva5RveA0KmR0uqJK5nyyOf3rmMFHqZRUzpwoNaTBr3AZkeMtlLmzS22JcT2IGyjUeMDhhDcu34q7U5g5tMXimHHNX2FkFG5SfStmh4SriUsLupYYcZfzf2qbMSSxvG3wdAQSRf7fCKnJ-NYi-sglSidRY3mmiZzz7FQ">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                <div class="absolute bottom-0 left-0 p-10 text-white">
+                    <h3 class="font-headline text-3xl mb-4">Adventure Trek at Chakrata</h3>
+                    <p class="text-white/80 max-w-md mb-6 font-light">Explore hidden trails and cascading waterfalls, ending with an authentic local lunch in the wilderness.</p>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-3 py-1 bg-white/10 rounded backdrop-blur-sm text-xs font-medium uppercase tracking-wider">Hidden Trails</span>
+                        <span class="px-3 py-1 bg-white/10 rounded backdrop-blur-sm text-xs font-medium uppercase tracking-wider">Waterfall Base</span>
+                        <span class="px-3 py-1 bg-white/10 rounded backdrop-blur-sm text-xs font-medium uppercase tracking-wider">Local Lunch</span>
+                    </div>
+                </div>
+            </div>
+            <div class="md:col-span-4 bg-[#f1f3f0] rounded-xl p-10 flex flex-col justify-center border border-outline-variant/10">
+                <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+                    <span class="material-symbols-outlined text-3xl text-primary">forest</span>
+                </div>
+                <h3 class="font-headline text-2xl text-primary mb-4">Guided Forest Walks</h3>
+                <p class="text-on-surface-variant font-light leading-relaxed mb-8">Reconnect with nearby trails surrounded by ancient deodar and oak forests.</p>
+                <a class="text-primary font-bold flex items-center gap-2" href="{% url 'pages:contact' %}">Plan This <span class="material-symbols-outlined">arrow_forward</span></a>
+            </div>
+            <div class="md:col-span-4 bg-surface-container rounded-xl overflow-hidden group border border-outline-variant/10 flex flex-col">
+                <div class="h-48 overflow-hidden">
+                    <img alt="Cultural Performance" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/ADBb0ug8_JhZkuYERsMJtxPOvZL47OUTgVN5pUrVjjyuf4YMsu3quSOfeRDO5MYS7ufgyM7eH7uYyvHTFzfgfL0IIR9q5kCaPykh00eEeAKpdYCcFR3aKO364CtfIpwABonDDhCoq9TLzfEWfmSTGl6xgRGqZ-FF8NpLFi_3ARYvsk4j8DmIwVw2YNTLbpmQKhv_ZEpB1HR1OI7N6WTWHZcRhKkygQyxzwnUCk0345UM6Z3D8sJRgae6dL09E8FvVOp4i79D6uAJjJ11Ctc">
+                </div>
+                <div class="p-8 flex-grow">
+                    <h3 class="font-headline text-xl text-primary mb-3">Cultural Tours</h3>
+                    <p class="text-on-surface-variant text-sm leading-relaxed">Explore local tradition, ancient craft, and the rhythmic pace of mountain village life.</p>
+                </div>
+            </div>
+            <div class="md:col-span-4 bg-primary text-white rounded-xl overflow-hidden group flex flex-col">
+                <div class="h-48 overflow-hidden">
+                    <img alt="Local Cuisine Preparation" class="w-full h-full object-cover opacity-90 transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/ADBb0ugGfqtHWNVbjxZL3quKC-86GRF3zCY_dppgEh-ixNVhyRaD-vbw38Z7FizNmPR3-_1rfwqinwqSerBqPctavQt3LeNBc7OKu9t8hmeCDsWIwWAFcR6EHXJxPQJEeKQGfiEQiB0lcfBNs7Rm9khc_zMhuSRFGyYkyAlwf5w0W9qzQ0hsAAX-5qVPXGKBQtjcCHvRa7TzlfqChtSCUUnksFc4vE48VjlBiTO-1eyNNKwQmH18xHfPvuF-WpdCdMRJkbkqh7XkxXLLXA">
+                </div>
+                <div class="p-8 flex-grow">
+                    <h3 class="font-headline text-xl mb-3">Local Cuisine</h3>
+                    <p class="text-white/80 text-sm italic">Authentic dishes prepared with mountain-grown ingredients.</p>
+                </div>
+            </div>
+            <div class="md:col-span-4 flex flex-col gap-4">
+                <div class="bg-white rounded-xl p-6 flex items-center gap-4 editorial-shadow border border-outline-variant/10">
+                    <div class="bg-surface-container p-3 rounded-lg"><span class="material-symbols-outlined text-secondary">camera</span></div>
+                    <div><h4 class="font-bold text-primary text-sm uppercase tracking-wider">Photography Spots</h4><p class="text-xs text-on-surface-variant">Panoramic views for memories.</p></div>
+                </div>
+                <div class="bg-white rounded-xl p-6 flex items-center gap-4 editorial-shadow border border-outline-variant/10">
+                    <div class="bg-tertiary-fixed/30 p-3 rounded-lg"><span class="material-symbols-outlined text-tertiary">groups</span></div>
+                    <div><h4 class="font-bold text-primary text-sm uppercase tracking-wider">Tour Guides</h4><p class="text-xs text-on-surface-variant">Knowledgeable local experts.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-surface-container-low py-24">
+        <div class="max-w-7xl mx-auto px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-headline text-4xl text-primary mb-4">Essence of Comfort</h2>
+                <p class="text-on-surface-variant max-w-2xl mx-auto italic">Providing the essentials for an adventurous yet peaceful retreat.</p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-12">
+                <div class="text-center"><span class="material-symbols-outlined text-primary text-4xl">camping</span><h5 class="font-bold text-xs uppercase tracking-widest text-primary mt-3">Camping and Trekking</h5></div>
+                <div class="text-center"><span class="material-symbols-outlined text-primary text-4xl">king_bed</span><h5 class="font-bold text-xs uppercase tracking-widest text-primary mt-3">Clean Tents</h5></div>
+                <div class="text-center"><span class="material-symbols-outlined text-primary text-4xl">water_drop</span><h5 class="font-bold text-xs uppercase tracking-widest text-primary mt-3">Drinking Water</h5></div>
+                <div class="text-center"><span class="material-symbols-outlined text-primary text-4xl">bolt</span><h5 class="font-bold text-xs uppercase tracking-widest text-primary mt-3">Electricity</h5></div>
+                <div class="text-center"><span class="material-symbols-outlined text-primary text-4xl">fireplace</span><h5 class="font-bold text-xs uppercase tracking-widest text-primary mt-3">Campfire</h5></div>
+                <div class="text-center"><span class="material-symbols-outlined text-primary text-4xl">medical_services</span><h5 class="font-bold text-xs uppercase tracking-widest text-primary mt-3">First Aid</h5></div>
+                <div class="text-center"><span class="material-symbols-outlined text-primary text-4xl">restaurant_menu</span><h5 class="font-bold text-xs uppercase tracking-widest text-primary mt-3">Meals and Snacks</h5></div>
+                <div class="text-center"><span class="material-symbols-outlined text-primary text-4xl">sanitizer</span><h5 class="font-bold text-xs uppercase tracking-widest text-primary mt-3">Hygiene</h5></div>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}

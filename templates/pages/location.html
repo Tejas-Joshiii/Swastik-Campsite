@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{% block title %}Location | Swastik Campsite{% endblock %}
+
+{% block content %}
+<main>
+    <section class="relative min-h-[78vh] flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img alt="Chakrata mountain range" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYQSE60Tfx_lQxXc28-cLZhK43bEC74cwk3cnGN-OYuYXKUJmRAjqGnY2Z_V4lsPSprDGAZJv-WhsEi6xAJJk93Ry_mJoDvGPRew0B4h7bBVZVukRXBuIyeAS8sDurb3g5z_iGa-hmtkgaJxOvaUuKcINbIF8aUM-ocEpwtcqZGxy9GMr20zh1lHMBgHuLi980o9Y6NAn4JtNq54nwd3NNlRnvlTMe6GJ4JYO675fcMtRxDHM00pvT0s7wjtMOBR9kk6W9AeXup5pn">
+            <div class="absolute inset-0 bg-gradient-to-b from-primary/30 to-surface"></div>
+        </div>
+        <div class="relative z-10 text-center max-w-4xl px-6">
+            <span class="font-body text-sm uppercase tracking-[0.3em] text-primary font-bold mb-4 block">Himalayan Heritage</span>
+            <h1 class="font-headline text-5xl md:text-7xl text-on-surface leading-tight">Find Your Way to the Mountains</h1>
+            <p class="font-body text-lg md:text-xl text-on-surface-variant mt-6 max-w-2xl mx-auto leading-relaxed">Journey into the quiet heart of Uttarakhand, where old trails lead to sanctuary.</p>
+        </div>
+    </section>
+
+    <section class="py-24 px-8 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+            <div class="lg:col-span-5 space-y-12">
+                <div class="border-l-4 border-primary/20 pl-8 py-4">
+                    <h2 class="font-headline text-3xl text-primary mb-2">Our Destinations</h2>
+                    <p class="font-body text-on-surface-variant">Two distinct worlds, curated for the soul.</p>
+                </div>
+                <div class="bg-surface-container-lowest p-8 rounded-xl">
+                    <div class="flex items-center gap-4 mb-6">
+                        <span class="material-symbols-outlined text-primary text-3xl">camping</span>
+                        <h3 class="font-headline text-2xl">Tent Experiences</h3>
+                    </div>
+                    <p class="font-body font-semibold text-lg mb-4">Lagapokri, near Chakrata</p>
+                    <p class="font-body text-on-surface-variant leading-relaxed">The heart of our camping adventure, placed for seclusion while maintaining access to local markets.</p>
+                </div>
+                <div class="bg-surface-container-lowest p-8 rounded-xl">
+                    <div class="flex items-center gap-4 mb-6">
+                        <span class="material-symbols-outlined text-primary text-3xl">holiday_village</span>
+                        <h3 class="font-headline text-2xl">Tipri Chaani Homestay</h3>
+                    </div>
+                    <p class="font-body font-semibold text-lg mb-4">Tipri, near Tiger Fall</p>
+                    <p class="font-body text-on-surface-variant leading-relaxed">A heritage retreat in a traditional village setting near the majestic Tiger Fall.</p>
+                </div>
+            </div>
+            <div class="lg:col-span-7 h-full">
+                <div class="relative sticky top-32 rounded-2xl overflow-hidden bg-surface-container-highest h-[600px] shadow-xl shadow-primary/5">
+                    <img alt="Map of Chakrata region" class="w-full h-full object-cover grayscale opacity-50" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnQ8gassyZ8nwoZpC0YbAo7INaQI645-ynGKnapOk1VIZUU7Suo9WwO_OTKLxyKcLr0tbdjC91ADcbGyVB9fQRafYdW15RB1fnOfvX4LJJyMm0DjbBkL7qanW575lNJhx7qofnhybt8rb3SiQ44o6tBBtSomGDZOo9sx-gVwkcDfMN_kbNjKS83cnKjnfjzA3OlhqzJ6bnYbyQgn9Xqsv7yB4DpkTnjzOfr2zWE6bqi_YJalwxGt-yt4zM4AUf60o3e0wb0nv247uZ">
+                    <div class="absolute top-8 left-8 bg-surface/90 backdrop-blur-md p-4 rounded-xl shadow-sm">
+                        <h4 class="font-headline text-primary font-bold">Chakrata District</h4>
+                        <p class="font-body text-xs text-on-surface-variant uppercase tracking-widest">Uttarakhand, India</p>
+                    </div>
+                    <a class="absolute bottom-8 right-8 bg-surface-container-lowest border border-outline-variant/30 text-on-surface px-4 py-2 rounded-lg flex items-center gap-2 hover:bg-primary hover:text-on-primary transition-all" href="https://www.google.com/maps/search/Chakrata,+Uttarakhand" target="_blank" rel="noopener">
+                        <span class="material-symbols-outlined text-sm">open_in_new</span> Open in Google Maps
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-surface-container-low py-20">
+        <div class="max-w-7xl mx-auto px-8">
+            <div class="text-center mb-16"><h2 class="font-headline text-4xl mb-4">Getting Here</h2></div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-surface-container-lowest p-10 rounded-xl"><span class="material-symbols-outlined text-primary text-4xl mb-6">directions_car</span><h4 class="font-headline text-xl mb-4">By Road</h4><p class="text-on-surface-variant">A scenic drive from Dehradun through Kalsi and the lower Shivaliks.</p></div>
+                <div class="bg-surface-container-lowest p-10 rounded-xl"><span class="material-symbols-outlined text-primary text-4xl mb-6">train</span><h4 class="font-headline text-xl mb-4">By Rail</h4><p class="text-on-surface-variant">Dehradun Railway Station is the nearest railhead with taxis available.</p></div>
+                <div class="bg-surface-container-lowest p-10 rounded-xl"><span class="material-symbols-outlined text-primary text-4xl mb-6">flight</span><h4 class="font-headline text-xl mb-4">By Air</h4><p class="text-on-surface-variant">Jolly Grant Airport in Dehradun is well-connected for easy transfers.</p></div>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}

@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+
+{% block title %}Swastik Campsite | Experience the True Spirit of the Mountains{% endblock %}
+
+{% block content %}
+<main>
+    <section class="relative min-h-[92vh] flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img alt="Mountain Campsite Hero" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB836KvtAtPXMXFni7FWqchCCPib84xI5X8mqa7O6eCM8A-tQgBjWTmPC_YAo0KO-xmqEXjLfijQyiM-k5j-KS3sbDPrmRRmbxBgWbaTM9_-cqDqEKpgOAuaQXMHMZGl93kQ0UYsCvuR1i_DD2TGobgTjCTYvaCIKlymoo8M9ejEPibvOKFmlv9pYaNMb04Xu1ola8idXIFT7OqV2azqeAG00Ec4L7OCZuG9Wr-GKr3amYzG5RL8_jjM799rEaqv_DGuchyU297yFrC">
+            <div class="absolute inset-0 hero-gradient"></div>
+        </div>
+        <div class="relative z-10 text-center px-4 max-w-4xl">
+            <span class="text-tertiary-fixed-dim font-medium tracking-[0.3em] uppercase text-sm mb-6 block">Welcome to Chakrata</span>
+            <h1 class="text-5xl md:text-7xl text-white mb-6 leading-[1.1]">Experience the True Spirit of the Mountains</h1>
+            <p class="text-white/90 text-lg md:text-xl font-light mb-10 max-w-2xl mx-auto">Peaceful hilltop stays in Chakrata, away from the crowd. Discover serenity where the earth meets the sky.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a class="bg-primary text-on-primary px-8 py-4 rounded-xl font-semibold text-lg hover:bg-primary-container transition-all" href="{% url 'pages:stay_options' %}">View Stay Options</a>
+                <a class="bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white/20 transition-all" href="{% url 'pages:contact' %}">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-8 bg-surface">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+            <div class="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
+                <img alt="Mountain Vibe" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDw-kaGgxHowUwa_RItJ4FVnelAMBTRFyQMnxkk-KyzHhkdjNVg6jNL4HL9UKCnnwDqgTK4-l5AcLaJgWM98B_iPDE5qJZEZLFHP3Hw23UiyqdxW4Yoc2mRFxjh0F0GBFPd69uPeZzPGELWMujRF2nxZHrnNBdrr7uXiuo7h04gFXTHdvS4JyhApK2FK6PzgtsPXRB6ZAhAs0daOGdu7fT_Cfb4-QZuV7EBj80EoYdVfBphQGyq2cOhDb0fzHTzgAyv_9muKwFd-Vsr">
+            </div>
+            <div>
+                <h2 class="text-4xl text-primary mb-8">Real Pahadi Vibes,<br>Unmatched Tranquility</h2>
+                <div class="space-y-6 text-on-surface-variant leading-relaxed text-lg">
+                    <p>At Swastik Campsite, we bring you closer to the raw beauty of Uttarakhand. Our hilltop location offers a 360-degree view of the majestic peaks.</p>
+                    <p>Experience the Real Pahadi hospitality where every sunrise feels personal and every night under the stars tells a story.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-8 bg-surface-container-low" id="stay">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl text-primary mb-4">Choose Your Mountain Retreat</h2>
+                <p class="text-on-surface-variant max-w-xl mx-auto">Thoughtfully designed stays to ensure comfort while maintaining the authentic camping essence.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                {% include "pages/partials/stay_card.html" with title="Star Gazing Tents" image="https://lh3.googleusercontent.com/aida-public/AB6AXuB_h3yzVRLCyXP8BngAkdTgtEAv8KQ1gE2vaMF0WhayujfWoekxIW_f606vI_eWXCctHqs8shUQ7LmmBMu7ecWcNHFQCT8GLfcfGGak3nqMbWDmtwYO_DuZg9N_JnkaVYVxkX7lUNW_1Yp1xAob2NPk1WFu3qTZ6nvTYlTq5mzbPWqSYccnncqCfmKmuwK7TbQg3Yj-xJdoUrLoGE1sozRlVOsU5kX1BpvOXIXqI1Lbj1Tt5bazk25No3w07qT0trc1JOS7jWN3yMdj" desc="Premium tents with clear roof panels for an immersive celestial experience." %}
+                {% include "pages/partials/stay_card.html" with title="Insulated Tents" image="https://lh3.googleusercontent.com/aida-public/AB6AXuBzAp-5aLaCGLEEAL3hKF5Pm2aLQts6bNZDDwkXK-5BXaAEYr2E0K86POgPZAkbKkvd-WYSC_68jRxCC2t_MpGktJnxs3jrjr9CE8RqclpYK0K78CxwcVDFYXRP0r_nuXRUUetOAtUZi-gvz_7IKfxp8fLNcoYuwuAle3VwcfYWAdA0zwwaEKFuhIdG10ZGXj8eMBCJUpc0zk6GFdsnI6-DjH3c7fJ-YqA1_ExaybOsamoiGdz82Wo39_P6GAGR0Cb2pYcbRy6dpXi8" desc="Dual-layer tents to keep you warm during cold mountain nights." %}
+                {% include "pages/partials/stay_card.html" with title="3-Person Tents" image="https://lh3.googleusercontent.com/aida-public/AB6AXuCrPfYlxTXb03SmWlTlxhzTDXX7KaMu4o4XSzOyr6w-fk3YJXZ5yqqd7UOFc0_9nH4SF8c9RrrB4CuA8PMqa58BoJLytekO0xWXvzEdhvtV-yCx9g6yF2w0WMvXk5z_M6250qdfQWnPetniAJqzZ5S7ZbWJ0me9rDvPeZnfgNFMV7beCsumTPTfv8t0tOEE_DZKH7uZ2HV7ndMp-ekOMichHRTWoc8gOT04n_VQL4p_miy4mRt-hKM-0Cw1w7DlhEhpXoItauJDT7UP" desc="Spacious dome tents perfect for small groups and families." %}
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-8 bg-surface" id="facilities">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl text-primary mb-12 text-center">Thoughtful Amenities for Your Peace</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+                <div class="p-7 bg-surface-container-low rounded-xl text-center"><span class="material-symbols-outlined text-4xl mb-4 text-primary">local_fire_department</span><h4 class="font-bold">Bonfire</h4></div>
+                <div class="p-7 bg-surface-container-low rounded-xl text-center"><span class="material-symbols-outlined text-4xl mb-4 text-primary">restaurant</span><h4 class="font-bold">Basic Meals</h4></div>
+                <div class="p-7 bg-surface-container-low rounded-xl text-center"><span class="material-symbols-outlined text-4xl mb-4 text-primary">wc</span><h4 class="font-bold">Washrooms</h4></div>
+                <div class="p-7 bg-surface-container-low rounded-xl text-center"><span class="material-symbols-outlined text-4xl mb-4 text-primary">local_parking</span><h4 class="font-bold">Parking</h4></div>
+                <div class="p-7 bg-surface-container-low rounded-xl text-center"><span class="material-symbols-outlined text-4xl mb-4 text-primary">directions_walk</span><h4 class="font-bold">Easy Access</h4></div>
+                <div class="p-7 bg-surface-container-low rounded-xl text-center"><span class="material-symbols-outlined text-4xl mb-4 text-primary">wb_sunny</span><h4 class="font-bold">Sun Decks</h4></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-8 bg-surface-container-low" id="experiences">
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="text-4xl text-primary mb-4">Unique Mountain Experiences</h2>
+            <p class="text-on-surface-variant mb-10">Do not just stay, explore the soul of Chakrata.</p>
+            <a class="inline-flex items-center gap-2 bg-primary text-white px-8 py-4 rounded-xl font-semibold" href="{% url 'pages:experiences' %}">Explore Experiences <span class="material-symbols-outlined">arrow_forward</span></a>
+        </div>
+    </section>
+
+    <section class="py-24 px-8" id="contact">
+        <div class="max-w-5xl mx-auto bg-primary rounded-3xl p-12 md:p-20 text-center">
+            <span class="text-tertiary-fixed font-bold tracking-widest uppercase text-xs mb-4 block">Reservation</span>
+            <h2 class="text-4xl md:text-5xl text-white mb-8">Ready for Your Mountain Adventure?</h2>
+            <div class="flex flex-col md:flex-row gap-6 justify-center items-center">
+                <a class="flex items-center gap-3 bg-[#25D366] text-white px-8 py-4 rounded-xl font-bold text-lg" href="https://wa.me/917830800469">
+                    <span class="material-symbols-outlined">chat</span> WhatsApp Booking
+                </a>
+                <a class="flex items-center gap-3 bg-white text-primary px-8 py-4 rounded-xl font-bold text-lg" href="tel:+917830800469">
+                    <span class="material-symbols-outlined">call</span> Call Us Now
+                </a>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}
